@@ -1,0 +1,77 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.boli.json.vista_individual"
+    android:background="#ff97e5ff">
+
+<LinearLayout
+    android:layout_marginTop="15dp"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+    <TextView
+
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/n_arete"
+    android:text="@string/arete"
+    android:textColor="#ff3b3dff"
+     android:textStyle="bold"/>
+
+    <TextView
+        android:layout_marginLeft="12dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/nacio"
+        android:text="@string/nac"
+        android:textColor="#ff3b3dff"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:layout_marginLeft="12dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/nombre"
+        android:text="@string/nom"
+        android:textColor="#ff3b3dff"
+        android:textStyle="bold"/>
+</LinearLayout>
+
+    <LinearLayout
+        android:layout_marginLeft="0dp"
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/sexo"
+        android:text="@string/sex"
+        android:textColor="#ff3b3dff"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:layout_marginLeft="12dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/gestacion"
+        android:text="@string/ges"
+        android:textColor="#ff3b3dff"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:layout_marginLeft="12dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/parto"
+        android:text="@string/par"
+        android:textColor="#ff3b3dff"
+        android:textStyle="bold"/>
+
+    </LinearLayout>
+
+</LinearLayout>
