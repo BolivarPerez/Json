@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 public class vista_individual extends ActionBarActivity {
 
+    // SE DECLARAN VARIABLES
     static final String KEY_N_ARETE = "n_arete";
     static final String KEY_F_NACIMIENTO = "f_nacimiento";
     static final String KEY_NOMBRE = "nombre";
@@ -25,7 +26,7 @@ public class vista_individual extends ActionBarActivity {
 
         Intent in = getIntent();
 
-        // Get XML values from previous intent
+        // Obtiene los valores de json declarados en la clase principal
         String num_are = in.getStringExtra(KEY_N_ARETE);
         String f_nacimiento = in.getStringExtra(KEY_F_NACIMIENTO);
         String nombre = in.getStringExtra(KEY_NOMBRE);
@@ -34,7 +35,7 @@ public class vista_individual extends ActionBarActivity {
         String f_parto = in.getStringExtra(KEY_F_PARTO);
 
 
-        // Displaying all values on the screen
+        // Muestra los valores en los Textview
         TextView lbl_arete = (TextView) findViewById(R.id.n_arete);
         TextView lblnacio = (TextView) findViewById(R.id.nacio);
         TextView lblnombre = (TextView) findViewById(R.id.nombre);

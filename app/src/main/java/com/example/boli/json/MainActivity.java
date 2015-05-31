@@ -28,10 +28,13 @@ import java.util.HashMap;
 
 public class MainActivity extends ListActivity {
 
-
+ // SE DECLARA VARIABLE
     private Context context;
+
+    // DIRECCION DONDE OBTENDRA LOS DATOS DEl ARCHIVO.JSON
     private static String url = "http://iin8.szhernandez.dx.am/ganado.json";
 
+    // Nodos keys Del JSON
     static final String KEY_N_ARETE = "n_arete";
     static final String KEY_F_NACIMIENTO = "f_nacimiento";
     static final String KEY_NOMBRE = "nombre";
@@ -50,6 +53,7 @@ public class MainActivity extends ListActivity {
         new ProgressTask(MainActivity.this).execute();
     }
 
+    // METOS QUE MUESTRA LA BARRA DE PROGRESO
     private class ProgressTask extends AsyncTask<String, Void, Boolean> {
         private ProgressDialog dialog;
 
@@ -60,7 +64,6 @@ public class MainActivity extends ListActivity {
             this.activity = activity;
             context = activity;
             dialog = new ProgressDialog(context);
-
         }
 
         /** progress dialog to show user that the backup is processing. */
@@ -70,12 +73,13 @@ public class MainActivity extends ListActivity {
          */
         private Context context;
 
-
+        //MENSAJE QUE SE MOSTRARA EL BARRA DE PROGRESO
         protected void onPreExecute() {
             this.dialog.setMessage("Cargando...");
             this.dialog.show();
         }
 
+        //MANDA LOS VALORES A ITEM
         protected void onPostExecute(final Boolean success) {
             if (dialog.isShowing()) {
                 dialog.dismiss();
@@ -93,7 +97,7 @@ public class MainActivity extends ListActivity {
                 @Override
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-                    // getting values from selected ListItem
+                    // Obtiene la selecciona de todos valores del Listview
                     String tx_n_arete = ((TextView) view.findViewById(R.id.v_n_arete)).getText().toString();
                     String tx_f_nacio = ((TextView) view.findViewById(R.id.v_f_naci)).getText().toString();
                     String txt_nombre = ((TextView) view.findViewById(R.id.v_nombre)).getText().toString();
@@ -101,7 +105,7 @@ public class MainActivity extends ListActivity {
                     String txt_f_ges = ((TextView) view.findViewById(R.id.v_f_ges)).getText().toString();
                     String txt_f_par = ((TextView) view.findViewById(R.id.v_f_parto)).getText().toString();
 
-                    // Starting new intent
+                    // MANDA LOS VALORES A LA VISTA INDIVIDUAL
                     Intent in = new Intent(getApplicationContext(), vista_individual.class);
                     in.putExtra(KEY_N_ARETE,"ARETE: " + tx_n_arete);
                     in.putExtra(KEY_F_NACIMIENTO," F.NAC: " + tx_f_nacio);
@@ -121,7 +125,7 @@ public class MainActivity extends ListActivity {
 
             JsonParse jParser = new JsonParse();
 
-            // getting JSON string from URL
+            // obtiene los valores del json mediante la url
             JSONArray json = jParser.getJSONFromUrl(url);
 
             for (int i = 0; i < json.length(); i++) {
@@ -139,7 +143,7 @@ public class MainActivity extends ListActivity {
 
                     HashMap<String, String> map = new HashMap<String, String>();
 
-                    // adding each child node to HashMap key => value
+                    // Se añaden cada nodo hijo al HashMap con su respectiva clave
                     map.put(KEY_N_ARETE, arete);
                     map.put(KEY_F_NACIMIENTO, nacio);
                     map.put(KEY_NOMBRE, nombre1);
